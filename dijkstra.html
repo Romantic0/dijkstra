@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Rotas</title>
+    <link rel="stylesheet" href="dijkstra.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Rotas</h1>
+        <div class="inputs">
+            <label for="origem">Origem:</label>
+            <select id="origem"></select>
+
+            <label for="destino">Destino:</label>
+            <select id="destino"></select>
+        </div>
+        <button id="calcBtn">Calcular Rota</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script src="dijkstra.js"></script>
+</body>
+</html>
