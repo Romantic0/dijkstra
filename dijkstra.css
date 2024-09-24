@@ -1,4 +1,4 @@
-/* Reset básico para garantir consistência entre navegadores */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Textura de mapa suave */
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); 
     background-size: cover;
     color: #333;
 }
@@ -86,7 +86,7 @@ button:hover {
     border: 1px solid #ced6e0;
 }
 
-/* Estilos adicionais inspirados em mapas */
+
 body::before {
     content: '';
     position: absolute;

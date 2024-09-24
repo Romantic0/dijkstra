@@ -14,7 +14,7 @@ const grafo = {
     "Imbuia": [["Ituporanga", 19.8], ["Petrolandia", 29.3]]
 };
 
-// Função para tornar o grafo bidirecional garantindo simetria de pesos
+
 function tornarGrafoBidirecional(grafo) {
     const grafoBidirecional = {};
 
@@ -26,12 +26,12 @@ function tornarGrafoBidirecional(grafo) {
                 grafoBidirecional[vizinho] = [];
             }
 
-            // Garantir que o peso da volta seja o mesmo
+            
             const existeRotaDeVolta = grafoBidirecional[vizinho].some(([c, _]) => c === cidade);
             if (!existeRotaDeVolta) {
                 grafoBidirecional[vizinho].push([cidade, peso]);
             } else {
-                // Atualizar o peso para garantir que seja o mesmo
+                
                 grafoBidirecional[vizinho] = grafoBidirecional[vizinho].map(([c, p]) => {
                     return c === cidade ? [c, peso] : [c, p];
                 });
@@ -42,14 +42,14 @@ function tornarGrafoBidirecional(grafo) {
     return grafoBidirecional;
 }
 
-// Algoritmo de Dijkstra
+
 function dijkstra(grafo, origem, destino) {
     const distancias = {};
     const anteriores = {};
     const visitados = new Set();
     const naoVisitados = new Set(Object.keys(grafo));
 
-    // Inicializar distâncias
+    
     for (const cidade of naoVisitados) {
         distancias[cidade] = Infinity;
         anteriores[cidade] = null;
@@ -57,7 +57,7 @@ function dijkstra(grafo, origem, destino) {
     distancias[origem] = 0;
 
     while (naoVisitados.size > 0) {
-        // Encontrar o nó com a menor distância
+        
         let menorDistancia = Infinity;
         let noAtual = null;
 
@@ -68,12 +68,12 @@ function dijkstra(grafo, origem, destino) {
             }
         }
 
-        if (noAtual === null) break; // Nenhum nó restante
+        if (noAtual === null) break; 
 
         naoVisitados.delete(noAtual);
         visitados.add(noAtual);
 
-        // Atualizar distâncias para os vizinhos
+        
         for (const [vizinho, peso] of grafo[noAtual] || []) {
             if (visitados.has(vizinho)) continue;
             const novaDistancia = distancias[noAtual] + peso;
@@ -86,7 +86,7 @@ function dijkstra(grafo, origem, destino) {
         if (noAtual === destino) break;
     }
 
-    // Reconstruir o caminho
+  
     const caminho = [];
     let no = destino;
     while (no !== null) {
@@ -97,7 +97,7 @@ function dijkstra(grafo, origem, destino) {
     return caminho.length > 1 ? [caminho, distancias[destino]] : [null, Infinity];
 }
 
-// Função para calcular o caminho ao clicar no botão
+
 function calcularCaminho() {
     const origem = document.getElementById('origem').value;
     const destino = document.getElementById('destino').value;
@@ -112,7 +112,7 @@ function calcularCaminho() {
     }
 }
 
-// Preencher as cidades ao carregar a página
+
 function preencherCidades() {
     const cidades = Object.keys(grafo);
     const origemSelect = document.getElementById('origem');
@@ -131,10 +131,9 @@ function preencherCidades() {
     });
 }
 
-// Inicializar grafo bidirecional
+
 const grafoBidirecional = tornarGrafoBidirecional(grafo);
 
-// Adicionar eventos e inicializar
 window.onload = function() {
     preencherCidades();
     document.getElementById('calcBtn').addEventListener('click', calcularCaminho);
