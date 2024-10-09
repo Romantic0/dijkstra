@@ -1,19 +1,23 @@
 // Definição do grafo com as cidades e as distâncias entre elas
 const grafo = {
-    "Agronomica": [["Agrolandia", 23.8], ["Pouso Redondo", 25.4]],
-    "Agrolandia": [["Petrolandia", 28.3], ["Agronomica", 23.8]],
-    "Dona Emma": [["Presidente Getulio", 16.2], ["Lontras", 40.2], ["Rio do Sul", 42.1]],
-    "Presidente Getulio": [["Dona Emma", 16.2], ["Ibirama", 14.2], ["Lontras", 20.5], ["Rio do Sul", 25.7]],
-    "Ibirama": [["Presidente Getulio", 14.2], ["Lontras", 17.9]],
-    "Ituporanga": [["Aurora", 17.4], ["Imbuia", 19.8], ["Agrolandia", 34.3]],
-    "Lontras": [["Ibirama", 17.9], ["Presidente Getulio", 20.5], ["Dona Emma", 40.2]],
-    "Petrolandia": [["Imbuia", 29.3], ["Agrolandia", 28.3]],
-    "Pouso Redondo": [["Trombudo Central", 14.1], ["Agronomica", 25.4]],
-    "Rio do Sul": [["Presidente Getulio", 25.7], ["Lontras", 10.3], ["Agronomica", 9.7], ["Dona Emma", 42.1]],
-    "Trombudo Central": [["Pouso Redondo", 14.1]],
-    "Aurora": [["Ituporanga", 17.4]],
-    "Imbuia": [["Ituporanga", 19.8], ["Petrolandia", 29.3]]
+    "Agronomica": [["Agrolandia", 23.8], ["Pouso Redondo", 25.4], ["Rio do Sul", 14.55]],
+    "Agrolandia": [["Petrolandia", 28.3], ["Agronomica", 23.8], ["Ituporanga", 75.46]],
+    "Dona Emma": [["Presidente Getulio", 16.2], ["Lontras", 40.2], ["Rio do Sul", 42.1], ["Pouso Redondo", 94.38]],
+    "Presidente Getulio": [["Dona Emma", 16.2], ["Ibirama", 42.6], ["Lontras", 20.5], ["Rio do Sul", 51.4]],
+    "Ibirama": [["Presidente Getulio", 42.6], ["Lontras", 39.38]],
+    "Ituporanga": [["Aurora", 34.8], ["Imbuia", 19.8], ["Agrolandia", 75.46], ["Petrolandia", 20.5]],
+    "Lontras": [["Ibirama", 39.38], ["Presidente Getulio", 20.5], ["Dona Emma", 40.2], ["Rio do Sul", 30.9]],
+    "Petrolandia": [["Imbuia", 29.3], ["Agrolandia", 28.3], ["Ituporanga", 20.5], ["Trombudo Central", 21.01]],
+    "Pouso Redondo": [["Trombudo Central", 14.1], ["Agronomica", 25.4], ["Dona Emma", 94.38], ["Laurentino", 37.4]],
+    "Rio do Sul": [["Presidente Getulio", 51.4], ["Lontras", 30.9], ["Agronomica", 14.55], ["Dona Emma", 42.1], ["Laurentino", 27.28], ["Aurora", 49.28]],
+    "Trombudo Central": [["Pouso Redondo", 14.1], ["Petrolandia", 21.01]],
+    "Aurora": [["Ituporanga", 34.8], ["Rio do Sul", 49.28]],
+    "Imbuia": [["Ituporanga", 19.8], ["Petrolandia", 29.3]],
+    "Presidente Nereu": [["Vidal Ramos", 16.6], ["Aurora", 80.96]],
+    "Vidal Ramos": [["Presidente Nereu", 16.6]],
+    "Laurentino": [["Pouso Redondo", 37.4], ["Rio do Sul", 27.28]]
 };
+
 
 // Função para o grafo percorrer o caminho nos dois sentidos)
 function tornarGrafoBidirecional(grafo) {
